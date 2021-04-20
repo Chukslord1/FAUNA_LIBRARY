@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+  <title>
+  <title>
+    Fauna E-Library
+  </title>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <div id="javascript_header">
+  </div>
+  <form>
+   <div class="form__header">
+    <h1>
+     FAUNA E-LIBRARY
+    </h1>
+    <p>
+     Search For Books
+    </p>
+   </div>
+       <h1 class="card-title">{{book.title}}</h1>
+       <br>
+   <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'book.png' %}" width="250" alt="Card image cap">
+  <div class="card-body">
+    <br>
+    <p class="card-text"><b>Summary:</b> {{book.summary}}</p>
+    <p class="card-text"><b>Genres:</b> {{book.genres}}</p>
+    <p class="card-text"><b>No of Pages:</b> {{book.pages}}</p>
+    <p class="card-text"><b>No of Copies:</b> {{book.copies}}</p>
+    <p class="card-text"><b>Author Name:</b> {{book.author}}</p>
+    <p class="card-text"><b>About Author:</b> {{book.about}}</p>
+  </div>
+</div>
+<br>
+<a  class="button"style="background-color:red;" href="{% url 'App:index' %}">Back to home</a>
+  </form>
+  <!-- partial -->
+    <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>

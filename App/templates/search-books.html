@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Fauna E-Library
+  </title>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+   <style>
+button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+</style>
+  <!-- partial:index.partial.html -->
+  <div id="javascript_header">
+  </div>
+  <form>
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:red;">{{ message }}</li>
+      {% endfor %}
+    </ul>
+   <div class="form__header">
+    <h1>
+     FAUNA E-LIBRARY
+    </h1>
+    <p>
+     Search For Books
+    </p>
+     <input type = "search" name = "search" placeholder="Enter the title of the book"><br>
+   </div>
+   {% if messages %}
+   {% else %}
+   <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'book.png' %}" width="250" alt="Card image cap">
+  <div class="card-body">
+    <center><a href="detail/{{book.title}}"><h2 class="card-title">{{book.title}}</h2></a></center>
+  </div>
+</div>
+ {% endif %}
+{% if prev_page or next_page  %}
+<div id="outer">
+<a  href="?page={{prev_page}}" class="previous round">&laquo; Previous</a>
+<a href="?page={{next_page}}" class="previous round">&raquo; Next</a>
+</div>
+{% endif %}
+<br>
+<a  class="button"style="background-color:red;" href="index">Back to home</a>
+</form>
+  <!-- partial -->
+    <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>

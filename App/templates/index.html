@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Fauna E-Library
+  </title>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <div id="javascript_header">
+  </div>
+  <form>
+   <div class="form__header">
+    <h1>
+     FAUNA E-LIBRARY
+    </h1>
+    <p>
+     Dashboard
+    </p>
+   </div>
+
+   <div class="line-break">
+   </div>
+   <a class="button" href="add-book"> Add Book</a>
+   <div class="line-break">
+   </div>
+   <a class="button" href="search-books"> Search Books</a>
+   <div class="line-break">
+   </div>
+   <a class="button" style="background-color:red;" href="login"> Logout </a>
+  </form>
+  <!-- partial -->
+  <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>
